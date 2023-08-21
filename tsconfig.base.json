@@ -1,4 +1,5 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
     "sourceMap": true,
@@ -13,18 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {},
-    "esModuleInterop": true
-  },
-  "files": [],
-  "include": [],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
+    "paths": {
+      "angular-material-electron-app": [
+        "packages/angular-material-electron-app/src/index.ts"
+      ]
     }
-  ],
+  },
   "exclude": ["node_modules", "tmp"]
 }
