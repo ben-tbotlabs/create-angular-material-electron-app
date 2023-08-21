@@ -1,0 +1,17 @@
+{
+  "eslint.format.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "conventionalCommits.scopes": [
+    "npx",
+    "dependencies",
+    "create-nx-workspace",
+    "material",
+    "ngrx",
+    "tailwind",
+    "angular"
+  ]
+}

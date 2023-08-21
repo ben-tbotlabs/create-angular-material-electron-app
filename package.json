@@ -3,6 +3,13 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "nuke": "npm unlink $npm_package_name && rimraf coverage && rimraf dist && rimraf node_modules",
+    "nuke:lock": "rimraf package-lock.json && npm run nuke",
+    "relink": "cd dist/create-angular-material-electron-app && npm run nuke && cd ../.. && npm run readme && nx build create-angular-material-electron-app && cd dist/create-angular-material-electron-app && npm link && cd ../..",
+    "delink": "cd dist/create-angular-material-electron-app && npm run nuke && cd ../..",
+    "deploy": "npm run readme && nx build create-angular-material-electron-app && cd dist/create-angular-material-electron-app && npm publish && cd ../..",
+    "readme": "write-if c -i=README.md -o=create-angular-material-electron-app/README.md",
+    "nx": "nx",
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test"
@@ -10,6 +17,7 @@
   "private": true,
   "dependencies": {
     "axios": "^1.0.0",
+    "chalk": "^5.3.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
@@ -24,6 +32,7 @@
     "@types/node": "~18.7.1",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
+    "@writeifchanged/cli": "^0.2.0",
     "esbuild": "^0.17.17",
     "eslint": "~8.46.0",
     "eslint-config-prettier": "8.1.0",
